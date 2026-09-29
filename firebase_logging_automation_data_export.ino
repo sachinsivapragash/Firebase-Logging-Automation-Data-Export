@@ -39,7 +39,7 @@
 #define WIFI_SSID       "YOUR_WIFI_NAME"
 #define WIFI_PASSWORD   "YOUR_WIFI_PASSWORD"
 
-#define API_KEY         "YOUR_FIREBASE_API_KEY"
+#define API_KEY         "AIzaSyCh3NPhL1QsHDZVAcNPAIpYOqL_QqnNY-c"
 #define DATABASE_URL    "https://your-project-default-rtdb.firebaseio.com/"
 #define USER_EMAIL      "device@example.com"   // create this user in Firebase Auth
 #define USER_PASSWORD   "device_password"
