@@ -1,34 +1,3 @@
-// task5_esp32_firebase.ino
-/*
-  ESP32 + Firebase Environment Monitor
-  -------------------------------------------------
-  Reads: DHT11 (temperature, humidity), LDR (ambient light — monitored only)
-  Writes: /sensors/{temperature,humidity,light}, /logs/{push}
-  Reads control: /control/mode ("auto"/"manual"), /control/bulb (bool)
-  Drives: relay/LED pin for the bulb
-
-  AUTOMATION LOGIC (auto mode):
-    Bulb turns ON when temperature >= TEMP_HIGH_THRESHOLD OR humidity >= HUMIDITY_HIGH_THRESHOLD
-    Bulb turns OFF when temperature <= TEMP_LOW_THRESHOLD AND humidity < HUMIDITY_HIGH_THRESHOLD
-    (The gap between TEMP_LOW and TEMP_HIGH is a hysteresis band so it doesn't flicker on/off
-    when the reading hovers right at one threshold.)
-
-  MANUAL MODE:
-    Bulb simply follows whatever value the dashboard last wrote to /control/bulb.
-
-  LIBRARIES REQUIRED (Arduino IDE > Library Manager):
-    - Firebase ESP Client   by Mobizt   ("Firebase ESP32 Client")
-    - DHT sensor library    by Adafruit
-    - Adafruit Unified Sensor (dependency of DHT)
-
-  BOARD: ESP32 Dev Module (Tools > Board)
-
-  WIRING (adjust pins as needed):
-    DHT11 data  -> GPIO 4
-    LDR (analog)-> GPIO 34 (ADC1_CH6)
-    Relay/Bulb  -> GPIO 5
-*/
-
 #include <WiFi.h>
 #include <Firebase_ESP_Client.h>
 #include "addons/TokenHelper.h"
